@@ -25,13 +25,27 @@ def isPrime(n):
             return False
     return True
 
+def getFactors(number):
+    ceiling = int((number**0.5)+1)
+    prime_factors = []
+    largest = 0
+    for i in range (2,ceiling+1):
+        if (number % i == 0):
+            if (isPrime(i)):
+                largest = max(largest,i)
+            if (isPrime(number/i)):
+                largest = max(largest,(number/i))
+    return largest
+
 assert(isPrime(3))
 assert(not isPrime(14))
 assert(not isPrime(64))
 assert(not isPrime(2639))
-assert(largestPrimeFactor(13195) == 29)
+assert(getFactors(13195) == 29)
+
 
 
 if __name__ == "__main__":
-    print(largestPrimeFactor(600851475143))
+    print(getFactors(600851475143))
+    
     
