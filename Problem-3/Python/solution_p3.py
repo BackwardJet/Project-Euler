@@ -1,10 +1,3 @@
-def largestPrimeFactor(num):
-    largest_factor = 0
-    for i in range(2,num):
-        if (isPrime(i) and (num % i == 0)):
-            largest_factor = i
-    return largest_factor
-
 def isPrime(n):
     # populates list with prime numbers from 2 to ceiling(sqrt(n))
     ceiling = int((n**0.5)+1)
@@ -25,7 +18,7 @@ def isPrime(n):
             return False
     return True
 
-def getFactors(number):
+def largestPrimeFactor(number):
     ceiling = int((number**0.5)+1)
     prime_factors = []
     largest = 0
@@ -41,11 +34,11 @@ assert(isPrime(3))
 assert(not isPrime(14))
 assert(not isPrime(64))
 assert(not isPrime(2639))
-assert(getFactors(13195) == 29)
+assert(largestPrimeFactor(13195) == 29)
 
 
 
 if __name__ == "__main__":
-    print(getFactors(600851475143))
+    print(largestPrimeFactor(600851475143))
     
     
