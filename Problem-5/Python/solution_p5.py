@@ -1,5 +1,5 @@
 def run():
-	i = 0
+	i = 2520
 	while True:
 	
 		for j in range(11,21): # 11 to 20
@@ -7,7 +7,7 @@ def run():
 				break
 			if (j == 20):
 				return i
-		i += 1
+		i += 2520
 
 print(run())
 
